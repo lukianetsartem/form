@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+pre {
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.app {
+    padding: 16px;
+}
+
+.title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 16px;
+}

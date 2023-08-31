@@ -1,0 +1,19 @@
+.button {
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    background: black;
+    color: white;
+    padding: 8px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #212121;
+}
+
+.button:disabled {
+    background: #949494;
+}
