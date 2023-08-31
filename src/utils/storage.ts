@@ -6,6 +6,7 @@ const Storage = {
     if (value) return JSON.parse(value);
     return value;
   },
+  clear: () => sessionStorage.clear(),
 };
 
 export default Storage;

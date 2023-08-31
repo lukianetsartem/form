@@ -1,25 +1,22 @@
-import React, { useEffect } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
-import { exercisesStorageKey } from "enums/storageKeys";
-import Storage from "utils/storage";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import APP_URLS from "enums/appUrls";
+import useClearSessionStorageOnRefresh from "hooks/useClearSessionStorageOnRefresh";
+import useNoResultRedirect from "hooks/useNoResultRedirect";
 import Main from "routes/Main/Main";
 import Result from "routes/Result/Result";
 import "./App.css";
 
 function App() {
-  const navigate = useNavigate();
-  const exercises = Storage.get(exercisesStorageKey);
-
-  useEffect(() => {
-    if (!exercises) navigate("/");
-  }, [exercises, navigate]);
+  useNoResultRedirect();
+  useClearSessionStorageOnRefresh();
 
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/result" element={<Result />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path={APP_URLS.base} element={<Main />} />
+        <Route path={APP_URLS.result} element={<Result />} />
+        <Route path="*" element={<Navigate to={APP_URLS.base} replace />} />
       </Routes>
     </div>
   );
