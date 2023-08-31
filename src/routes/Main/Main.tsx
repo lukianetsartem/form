@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FormikHelpers } from "formik";
 import Storage from "utils/storage";
+import APP_URLS from "enums/appUrls";
 import { exercisesStorageKey } from "enums/storageKeys";
 import { ExercisesParams } from "interfaces/exercises";
 import { fetchExercises } from "routes/Main/api";
@@ -17,7 +18,7 @@ function Main() {
     fetchExercises(values)
       .then((res) => {
         Storage.set(exercisesStorageKey, res);
-        navigate("/result");
+        navigate(APP_URLS.result);
       })
       .catch((err) => {
         // eslint-disable-next-line no-alert

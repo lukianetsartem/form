@@ -4,7 +4,7 @@ import { exercisesStorageKey } from "enums/storageKeys";
 import APP_URLS from "enums/appUrls";
 import Storage from "utils/storage";
 
-const useNoResultRedirect = () => {
+const useNoResultRedirect = (): void => {
   const navigate = useNavigate();
   const exercises = Storage.get(exercisesStorageKey);
 

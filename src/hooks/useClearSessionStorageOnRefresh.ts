@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Storage from "utils/storage";
 
-const useClearSessionStorageOnRefresh = () => {
+const useClearSessionStorageOnRefresh = (): void => {
   const { clear } = Storage;
   useEffect(() => {
     window.addEventListener("beforeunload", clear);
